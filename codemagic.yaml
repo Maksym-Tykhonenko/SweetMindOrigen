@@ -3,7 +3,7 @@ workflows:
     name: Your Sweet Mind
     max_build_duration: 120
     integrations:
-      app_store_connect: YourSweetMindCodemagicKey
+      app_store_connect: YourSweetMindApiKeyNew
     environment:
       ios_signing:
         distribution_type: app_store
