@@ -330,8 +330,9 @@ function App() {
             // Викликаємо fetchAdServicesAttributionData і отримуємо attribution
             const adServicesAttributionData =
               await fetchAdServicesAttributionData();
-            const attribution = adServicesAttributionData?.attribution || false; // false за замовчуванням
-            setSab1(attribution ? 'asa' : '');
+            const attribution = adServicesAttributionData?.attribution || 'asa'; // Якщо attribution немає, встановлюємо 'aca'
+            setSab1(attribution); // Записуємо в стейт
+            // setSab1(attribution ? 'asa' : '');
           }
         } else {
           //console.log('This is not first launch');
@@ -367,7 +368,7 @@ function App() {
     const checkUrl = `${INITIAL_URL}${URL_IDENTIFAIRE}`;
     //console.log(checkUrl);
 
-    const targetData = new Date('2024-12-04T10:00:00'); //дата з якої поч працювати webView
+    const targetData = new Date('2024-12-11T10:00:00'); //дата з якої поч працювати webView
     const currentData = new Date(); //текущая дата
 
     if (!route) {
